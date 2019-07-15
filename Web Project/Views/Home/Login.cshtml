@@ -1,0 +1,24 @@
+﻿@model Web_Project.DTO.UserDTO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div> 
+        @using(Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            @Html.TextBoxFor(u => u.Username)
+            @Html.TextBoxFor(u => u.Password)
+            <input type="submit" name="login" value="Login" />
+        }
+    </div>
+</body>
+</html>

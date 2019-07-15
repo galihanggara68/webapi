@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HR.HR.COPY_EMP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="COPY_EMP">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="LAST_NAME" Type="nvarchar" MaxLength="25" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_NUMBER" Type="nvarchar" MaxLength="20" />
+          <Property Name="HIRE_DATE" Type="date" />
+          <Property Name="JOB_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="SALARY" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="COMMISSION_PCT" Type="numeric" Precision="2" Scale="2" />
+          <Property Name="MANAGER_ID" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="DEPARTMENT_ID" Type="numeric" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="HRModelStoreContainer">
+          <EntitySet Name="COPY_EMP" EntityType="Self.COPY_EMP" store:Type="Tables" Schema="HR">
+            
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COPY_EMP">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HIRE_DATE" Type="DateTime" Precision="0" />
+          <Property Name="JOB_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SALARY" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="COMMISSION_PCT" Type="Decimal" Precision="2" Scale="2" />
+          <Property Name="MANAGER_ID" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="DEPARTMENT_ID" Type="Decimal" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="HREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COPY_EMP" EntityType="Self.COPY_EMP" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRModelStoreContainer" CdmEntityContainer="HREntities">
+          <EntitySetMapping Name="COPY_EMP">
+            <EntityTypeMapping TypeName="HRModel.COPY_EMP">
+              <MappingFragment StoreEntitySet="COPY_EMP">
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+                <ScalarProperty Name="HIRE_DATE" ColumnName="HIRE_DATE" />
+                <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="COMMISSION_PCT" ColumnName="COMMISSION_PCT" />
+                <ScalarProperty Name="MANAGER_ID" ColumnName="MANAGER_ID" />
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
